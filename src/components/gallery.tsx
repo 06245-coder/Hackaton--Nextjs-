@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import Image component from Next.js
 
 const LeatestProducts = () => {
   const products = [
@@ -67,14 +68,16 @@ const LeatestProducts = () => {
               {index === 1 && (
                 <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-md">Sale</span>
               )}
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
-              <h3 className="text-lg font-medium text-center mb-2">
-                {product.name}
-              </h3>
+              <div className="w-full h-40 mb-4 overflow-hidden rounded-md">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover"
+                  width={160} // Add width for the image
+                  height={160} // Add height for the image
+                />
+              </div>
+              <h3 className="text-lg font-medium text-center mb-2">{product.name}</h3>
               <div className="flex justify-center items-center space-x-2">
                 <span className="text-pink-500 font-semibold">{product.price}</span>
                 <span className="line-through text-gray-400">{product.originalPrice}</span>

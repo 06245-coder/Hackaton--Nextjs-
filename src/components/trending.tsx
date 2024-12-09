@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Image from 'next/image'; // Import Image component from Next.js
 
 interface Product {
   id: number;
@@ -23,7 +24,6 @@ const TrendingProducts: React.FC = () => {
     { id: 3, src: '/img3.png', name: 'Cantilever chair', price: '$90.00', originalPrice: '$120.00' },
     { id: 4, src: '/img4.png', name: 'Cantilever chair', price: '$90.00', originalPrice: '$120.00' },
     { id: 5, src: '/pic3.png', name: 'Cantilever chair', price: '$90.00', originalPrice: '$120.00' },
-   
   ];
 
   const sidebarItems: SidebarItem[] = [
@@ -51,15 +51,15 @@ const TrendingProducts: React.FC = () => {
               className="p-4 border rounded-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md">
-                <img
+                <Image
                   src={product.src}
                   alt={product.name}
                   className="object-cover w-full h-full"
+                  width={400}  // Add width for the image
+                  height={400} // Add height for the image
                 />
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-gray-700">
-                {product.name}
-              </h2>
+              <h2 className="mt-4 text-lg font-semibold text-gray-700">{product.name}</h2>
               {product.originalPrice && (
                 <p className="text-sm text-gray-500 line-through">{product.originalPrice}</p>
               )}
@@ -78,10 +78,12 @@ const TrendingProducts: React.FC = () => {
             >
               Shop Now
             </a>
-            <img
+            <Image
               src="/img6.png"
               alt="Promotion 1"
               className="absolute bottom-4 right-4 w-20 h-20 object-contain"
+              width={80}   // Add width for the image
+              height={80}  // Add height for the image
             />
           </div>
 
@@ -93,10 +95,12 @@ const TrendingProducts: React.FC = () => {
             >
               View Collection
             </a>
-            <img
+            <Image
               src="/img5.png"
               alt="Promotion 2"
               className="absolute bottom-4 right-4 w-20 h-20 object-contain"
+              width={80}   // Add width for the image
+              height={80}  // Add height for the image
             />
           </div>
         </div>
@@ -111,10 +115,12 @@ const TrendingProducts: React.FC = () => {
                 className="flex justify-between items-center p-4 border rounded-md hover:shadow-lg transition-shadow duration-300"
               >
                 <span className="text-gray-700 font-medium flex items-center">
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.name}
                     className="w-12 h-12 mr-4 object-contain rounded-md"
+                    width={48}  // Add width for the image
+                    height={48} // Add height for the image
                   />
                   {item.name}
                 </span>

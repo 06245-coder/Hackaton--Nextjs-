@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // Import the Image component from next/image
 
 const FeaturedProducts = () => {
   const products = [
@@ -7,7 +8,7 @@ const FeaturedProducts = () => {
       name: "Cantilever chair",
       code: "YS92301",
       price: "$42.00",
-      image: "/whitechair.png", // Replace with actual image paths
+      image: "/whitechair.png", // Ensure these images are in the /public folder in Next.js
     },
     {
       id: 2,
@@ -40,22 +41,18 @@ const FeaturedProducts = () => {
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`border rounded-lg p-4 ${
-                index === 1 ? "shadow-lg bg-blue-100" : ""
-              }`}
+              className={`border rounded-lg p-4 ${index === 1 ? "shadow-lg bg-blue-100" : ""}`}
             >
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
+                width={400}  // Add a width for the image
+                height={300} // Add a height for the image
                 className="w-full h-40 object-cover rounded-md"
               />
-              <h3 className="text-lg font-medium text-center mt-4">
-                {product.name}
-              </h3>
+              <h3 className="text-lg font-medium text-center mt-4">{product.name}</h3>
               <p className="text-center text-gray-500">Code: {product.code}</p>
-              <p className="text-center text-blue-500 font-semibold">
-                {product.price}
-              </p>
+              <p className="text-center text-blue-500 font-semibold">{product.price}</p>
               {index === 1 && (
                 <button className="mt-4 block mx-auto px-4 py-2 bg-green-500 text-white rounded-md">
                   View Details
@@ -77,3 +74,4 @@ const FeaturedProducts = () => {
 };
 
 export default FeaturedProducts;
+

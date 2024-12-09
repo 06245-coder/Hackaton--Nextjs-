@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Upperheader from "@/components/header";
 import NavBar from "@/components/navbar";
 import React from "react";
+import Image from 'next/image';  // Import Image component
 
 const ProductDetails = () => {
   // Sample related products data
@@ -26,39 +27,47 @@ const ProductDetails = () => {
           <div className="bg-gray-100 p-6 rounded-lg mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Product Images */}
-              
-<div className="md:col-span-1 flex flex-col space-y-2">
-  <div className="flex-1">
-    <img
-      src="/product4.jpeg"
-      alt="Main Product"
-      className="w-full h-[400px] object-cover rounded-md"
-    />
-  </div>
-  <div className="grid grid-cols-4 gap-2">
-    <img
-      src="/product1.jpeg"
-      alt="Thumb 1"
-      className="w-full h-24 object-cover rounded-md"
-    />
-    <img
-      src="/product2.jpeg"
-      alt="Thumb 2"
-      className="w-full h-24 object-cover rounded-md"
-    />
-    <img
-      src="/product3.jpeg"
-      alt="Thumb 3"
-      className="w-full h-24 object-cover rounded-md"
-    />
-    <img
-      src="/product4.jpeg"
-      alt="Thumb 4"
-      className="w-full h-24 object-cover rounded-md"
-    />
-  </div>
-</div>
-
+              <div className="md:col-span-1 flex flex-col space-y-2">
+                <div className="flex-1">
+                  <Image
+                    src="/product4.jpeg"
+                    alt="Main Product"
+                    className="w-full h-[400px] object-cover rounded-md"
+                    width={400}   // Add width
+                    height={400}  // Add height
+                  />
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  <Image
+                    src="/product1.jpeg"
+                    alt="Thumb 1"
+                    className="w-full h-24 object-cover rounded-md"
+                    width={100}   // Add width
+                    height={100}  // Add height
+                  />
+                  <Image
+                    src="/product2.jpeg"
+                    alt="Thumb 2"
+                    className="w-full h-24 object-cover rounded-md"
+                    width={100}   // Add width
+                    height={100}  // Add height
+                  />
+                  <Image
+                    src="/product3.jpeg"
+                    alt="Thumb 3"
+                    className="w-full h-24 object-cover rounded-md"
+                    width={100}   // Add width
+                    height={100}  // Add height
+                  />
+                  <Image
+                    src="/product4.jpeg"
+                    alt="Thumb 4"
+                    className="w-full h-24 object-cover rounded-md"
+                    width={100}   // Add width
+                    height={100}  // Add height
+                  />
+                </div>
+              </div>
 
               {/* Product Details */}
               <div className="md:col-span-2">
@@ -111,10 +120,12 @@ const ProductDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {relatedProducts.map((product) => (
                 <div key={product.id} className="text-center bg-white p-4 shadow rounded-md">
-                  <img
+                  <Image
                     src={product.img}
                     alt={product.name}
                     className="w-full h-48 object-cover mb-4 rounded-md"
+                    width={200}   // Add width
+                    height={200}  // Add height
                   />
                   <h4 className="text-lg font-semibold mb-2">{product.name}</h4>
                   <p className="text-pink-500 font-bold mb-2">{product.price}</p>

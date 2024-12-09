@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image"; // Import the Image component
 
 import Upperheader from "@/components/header";
 import NavBar from "@/components/navbar";
@@ -129,10 +130,12 @@ const ShopList: FC = () => {
                   key={index}
                   className="flex bg-white shadow rounded-lg p-4 items-center space-x-6 hover:shadow-lg transition-shadow duration-300"
                 >
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
-                    className="w-36 h-24 object-cover rounded-md"
+                    width={144} // Adjust width as per your layout
+                    height={96} // Adjust height as per your layout
+                    className="object-cover rounded-md"
                   />
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-800">

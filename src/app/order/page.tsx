@@ -2,6 +2,7 @@ import React from "react";
 import Header from "@/components/header";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Image from 'next/image';  // Import Image component
 
 const OrderCompleted = () => {
   return (
@@ -44,12 +45,22 @@ const OrderCompleted = () => {
           <div className="relative mt-12">
             <div className="absolute left-0 top-0 transform -translate-x-1/2 -translate-y-1/2">
               <div className="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full shadow">
-                <img src="/clock.png" alt="Clock Icon" />
+                <Image
+                  src="/clock.png"
+                  alt="Clock Icon"
+                  width={40}  // Set width
+                  height={40}  // Set height
+                />
               </div>
             </div>
             <div className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/2">
               <div className="w-16 h-16 flex items-center justify-center bg-pink-50 rounded-full shadow">
-                <img src="/note.png" alt="Note Icon" />
+                <Image
+                  src="/note.png"
+                  alt="Note Icon"
+                  width={40}  // Set width
+                  height={40}  // Set height
+                />
               </div>
             </div>
           </div>

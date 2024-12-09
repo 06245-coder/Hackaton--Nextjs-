@@ -1,9 +1,8 @@
 import { FC } from "react";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
-
-
 import Upperheader from "@/components/header";
+import Image from 'next/image'; // Import Image component
 
 interface Product {
   name: string;
@@ -94,10 +93,12 @@ const ShopList: FC = () => {
               key={index}
               className="flex bg-white shadow rounded-lg p-4 items-center space-x-6 hover:shadow-lg transition-shadow duration-300"
             >
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
                 className="w-36 h-24 object-cover rounded-md"
+                width={144}  // Add width
+                height={96}  // Add height
               />
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-800">

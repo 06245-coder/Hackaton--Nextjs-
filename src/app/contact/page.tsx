@@ -1,9 +1,8 @@
-// pages/contact.tsx
 import Footer from '@/components/footer';
 import Upperheader from '@/components/header';
 import NavBar from '@/components/navbar';
 import React from 'react';
-
+import Image from 'next/image';  // Import the Image component
 
 const Contact: React.FC = () => {
   return (
@@ -89,10 +88,12 @@ const Contact: React.FC = () => {
         {/* Illustration */}
         <div className="mt-10 flex justify-center">
           <div className="w-full max-w-lg">
-            <img
-              src="/ill.png"
+            <Image
+              src="/ill.png"  // Use the correct image path
               alt="Illustration"
-              className="w-full h-auto"
+              width={600}  // Set the width for the image
+              height={400}  // Set the height for the image
+              className="w-full h-auto"  // Ensure the image is responsive
             />
           </div>
         </div>

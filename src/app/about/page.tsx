@@ -1,11 +1,8 @@
-
-
-
 import Footer from "@/components/footer";
 import Upperheader from "@/components/header";
 import NavBar from "@/components/navbar";
 import React from "react";
-
+import Image from "next/image";  // Import the Image component
 
 const AboutUsPage: React.FC = () => {
   return (
@@ -20,20 +17,15 @@ const AboutUsPage: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 py-8">
           {/* Page Title Section */}
           <h1 className="text-3xl font-bold text-purple-600 mb-4">About Us</h1>
-          
 
           {/* About Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-12">
-            <img
-              src="blog.jpeg"
+            <Image
+              src="/blog.jpeg"  // Use the correct path for your image
               alt="Business Meeting"
-              className="w-[570px] h-[409px] rounded-tl-lg "
-              style={{
-                top: "530px",
-                left: "375px",
-                gap: "0px",
-                borderRadius: "6px 0px 0px 0px",
-              }}
+              width={570}  // Define the width of the image
+              height={409}  // Define the height of the image
+              className="rounded-tl-lg"
             />
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-4">

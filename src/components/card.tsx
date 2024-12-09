@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import the Image component from next/image
 
 const ProductCard = () => {
   return (
@@ -6,10 +7,12 @@ const ProductCard = () => {
       <div className="max-w-md bg-white rounded-lg shadow-lg overflow-hidden border-2 border-orange-500">
         <div className="relative">
           <div className="absolute inset-0 bg-pink-100 rounded-full -z-10"></div>
-          <img
+          <Image
             src="/img.png" // Replace with your image URL
             alt="Blue Sofa"
-            className="w-full"
+            width={500}  // Set an appropriate width
+            height={300} // Set an appropriate height
+            className="w-full" // Maintain the styling for full-width
           />
         </div>
         <div className="p-6">

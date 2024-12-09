@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image'; // Import Image component
 import Upperheader from '@/components/header';
 import NavBar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -59,17 +59,19 @@ const Checkout = () => {
             <div className="lg:w-1/3">
               <div className="space-y-4">
                 {/* Items List */}
-                {[
+                {[ 
                   { name: 'Ur dan consequat', size: 'Small', price: '$32.50', img: '/cart.jpeg' },
                   { name: 'Ur dan consequat', size: 'Small', price: '$32.50', img: '/cart1.jpeg' },
                   { name: 'Ur dan consequat', size: 'Small', price: '$32.50', img: '/cart2.jpeg' },
-                  { name: 'Ur dan consequat', size: 'Small', price: '$32.50', img: '/cart3.jpeg' },
+                  { name: 'Ur dan consequat', size: 'Small', price: '$32.50', img: '/cart3.jpeg' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between border-b pb-4">
-                    <img
+                    <Image
                       src={item.img}
                       alt={item.name}
                       className="w-16 h-16 object-cover rounded-md"
+                      width={64}  // Add width
+                      height={64} // Add height
                     />
                     <div className="flex-1 ml-4">
                       <p className="font-semibold">{item.name}</p>

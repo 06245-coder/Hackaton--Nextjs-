@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Upperheader from "@/components/header";
 import NavBar from "@/components/navbar";
 import React from "react";
+import Image from "next/image";  // Import the Image component
 
 const SingleBlogPage: React.FC = () => {
   return (
@@ -17,9 +18,11 @@ const SingleBlogPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Blog Content */}
           <div className="md:col-span-8">
-            <img
-              src="blog1.jpeg"
+            <Image
+              src="/blog1.jpeg"  // Use the correct path for your image
               alt="Blog Image"
+              width={800}  // Define the width of the image
+              height={450}  // Define the height of the image
               className="w-full rounded-lg mb-6"
             />
             <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
@@ -81,11 +84,23 @@ const SingleBlogPage: React.FC = () => {
               <h3 className="text-lg font-bold text-gray-800 mb-4">Sale Product</h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Product" className="w-12 h-12 rounded-lg mr-4" />
+                  <Image
+                    src="https://via.placeholder.com/50"
+                    alt="Product"
+                    width={50}  // Define the width of the image
+                    height={50}  // Define the height of the image
+                    className="w-12 h-12 rounded-lg mr-4"
+                  />
                   <span className="text-gray-600">Product Name</span>
                 </div>
                 <div className="flex items-center">
-                  <img src="https://via.placeholder.com/50" alt="Product" className="w-12 h-12 rounded-lg mr-4" />
+                  <Image
+                    src="https://via.placeholder.com/50"
+                    alt="Product"
+                    width={50}  // Define the width of the image
+                    height={50}  // Define the height of the image
+                    className="w-12 h-12 rounded-lg mr-4"
+                  />
                   <span className="text-gray-600">Product Name</span>
                 </div>
               </div>
@@ -93,7 +108,7 @@ const SingleBlogPage: React.FC = () => {
           </div>
         </div>
       </div>
-      {/*Footer Section */}
+      {/* Footer Section */}
       <Footer/>
     </div>
   );
