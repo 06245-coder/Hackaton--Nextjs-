@@ -43,8 +43,8 @@ const SingleBlogPage: React.FC = () => {
               Nisi consequat integer amet, consectetur adipiscing elit id, volutpat volutpat ac.
             </p>
             <blockquote className="border-l-4 border-purple-600 pl-4 italic text-gray-600 mb-4">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor sit amet, consectetur adipiscing
-              elit."
+            &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor sit amet, consectetur adipiscing
+              elit.&quot;
             </blockquote>
           </div>
 

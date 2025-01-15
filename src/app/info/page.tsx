@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import Upperheader from "@/components/header";
 import NavBar from "@/components/navbar";
@@ -99,10 +100,12 @@ const Checkout = () => {
                     key={product.id}
                     className="flex items-center justify-between border-b pb-4"
                   >
-                    <img
+                    <Image
                       src={product.img}
                       alt={product.name}
-                      className="w-16 h-16 object-cover rounded-md"
+                      width={64}
+                      height={64}
+                      className="object-cover rounded-md"
                     />
                     <div className="flex-1 ml-4">
                       <p className="font-medium">{product.name}</p>
@@ -133,7 +136,7 @@ const Checkout = () => {
       </div>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
